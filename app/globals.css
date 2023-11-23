@@ -2,6 +2,14 @@
 @tailwind components;
 @tailwind utilities;
 
-body {
-  @apply text-white-powder bg-black-raisin;
+@layer base {
+  body {
+    @apply text-white-powder bg-black-raisin-tint;
+  }
+}
+
+@layer utilities {
+  .title {
+    @apply text-lg font-bold;
+  }
 }

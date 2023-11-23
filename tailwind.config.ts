@@ -2,6 +2,7 @@ import type { Config } from "tailwindcss";
 
 const config: Config = {
   content: [
+    "./node_modules/flowbite-react/**/*.js",
     "./pages/**/*.{js,ts,jsx,tsx,mdx}",
     "./components/**/*.{js,ts,jsx,tsx,mdx}",
     "./app/**/*.{js,ts,jsx,tsx,mdx}",
@@ -18,10 +19,12 @@ const config: Config = {
         "red-engine": "#C1292E",
         "yellow-bus": "#F1D302",
         "blue-teal": "#1F7A8C",
-        "black-raisin": "#242325",
+        "black-raisin": "#121213",
+        "black-raisin-shade": "#0b0a0b",
+        "black-raisin-tint": "#19191a",
       },
     },
   },
-  plugins: [],
+  plugins: [require("flowbite/plugin")],
 };
 export default config;

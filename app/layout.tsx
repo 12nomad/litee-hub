@@ -7,7 +7,7 @@ import "./globals.css";
 const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Litee Hub",
+  title: "Litee Hub | The best gaming spot online",
   description: "The best gaming spot online",
 };
 

@@ -32,7 +32,7 @@ async function connectDB() {
 
   if (!cached.promise) {
     const opts: ConnectOptions = {
-      bufferCommands: false,
+      bufferCommands: true,
       dbName: "litee-hub",
     };
 

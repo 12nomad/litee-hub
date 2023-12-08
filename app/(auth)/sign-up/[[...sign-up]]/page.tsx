@@ -10,4 +10,4 @@ const Page = () => {
   return <SignUp />;
 };
 
-export default SignUp;
+export default Page;

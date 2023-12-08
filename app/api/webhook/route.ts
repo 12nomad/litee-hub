@@ -1,4 +1,4 @@
-import type { NextApiRequest, NextApiResponse } from "next";
+import { NextResponse } from "next/server";
 import { Webhook } from "svix";
 import { headers } from "next/headers";
 import { WebhookEvent } from "@clerk/nextjs/server";
@@ -9,7 +9,7 @@ import {
   updateUser,
 } from "../../../lib/actions/user.action";
 
-export async function POST(req: NextApiRequest, res: NextApiResponse) {
+export async function POST(req: Request) {
   // You can find this in the Clerk Dashboard -> Webhooks -> choose the webhook
   const WEBHOOK_SECRET = process.env.WEBHOOK_SECRET;
 
@@ -33,7 +33,6 @@ export async function POST(req: NextApiRequest, res: NextApiResponse) {
   }
 
   // Get the body
-  // @ts-ignore
   const payload = await req.json();
   const body = JSON.stringify(payload);
 
@@ -69,7 +68,7 @@ export async function POST(req: NextApiRequest, res: NextApiResponse) {
       username: username || "",
     });
 
-    return res.status(201).json({ success: true });
+    return NextResponse.json({ success: true }, { status: 201 });
   }
 
   if (eventType === "user.updated") {
@@ -85,7 +84,7 @@ export async function POST(req: NextApiRequest, res: NextApiResponse) {
       },
       path: `/profile/${id}`,
     });
-    return res.status(200).json({ success: true });
+    return NextResponse.json({ success: true }, { status: 200 });
   }
 
   if (eventType === "user.deleted") {
@@ -93,8 +92,8 @@ export async function POST(req: NextApiRequest, res: NextApiResponse) {
     await deleteUser({
       clerkId: id || "",
     });
-    return res.status(200).json({ success: true });
+    return NextResponse.json({ success: true }, { status: 200 });
   }
 
-  return res.status(200);
+  return NextResponse.json({ success: true }, { status: 200 });
 }

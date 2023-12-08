@@ -4,7 +4,7 @@ interface ITopic {
 
 const Topic = ({ content }: ITopic) => {
   return (
-    <div className="flex items-center justify-between">
+    <div className="flex items-center justify-between gap-4">
       <p>{content}</p>
       <svg
         className="w-4 h-4 text-white-powder"

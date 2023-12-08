@@ -10,7 +10,9 @@ export default function AuthLayout({ children }: { children: ReactNode }) {
       <Nav />
       <div className="grid grid-cols-12">
         <LeftSidebar />
-        <main className="col-span-12 lg:col-span-7 p-4 lg:p-8">{children}</main>
+        <main className="col-span-12 lg:col-span-7 p-4 lg:p-8 overflow-x-hidden overflow-y-auto h-[calc(100vh-76px)] no-scrollbar">
+          {children}
+        </main>
         <RightSidebar />
       </div>
     </>

@@ -4,6 +4,7 @@ const homeFilters: readonly IHomeFilters[] = [
   {
     label: "Newest",
     value: "newest",
+    isDefault: true,
   },
   {
     label: "Trending",

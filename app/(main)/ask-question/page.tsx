@@ -12,8 +12,7 @@ export const metadata: Metadata = {
 };
 
 const AskQuestion = async () => {
-  // const { userId } = auth();
-  const userId = "123456";
+  const { userId } = auth();
 
   if (!userId) return redirect("/sign-in");
 

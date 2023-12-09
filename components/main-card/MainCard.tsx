@@ -19,7 +19,7 @@ const MainCard = ({ question }: IMainCard) => {
       </ul>
       <div className="flex flex-wrap gap-2 items-center justify-between text-sm">
         <div className="flex items-center gap-2">
-          {/* {question.author.picture ? (
+          {question.author.picture ? (
             <Image
               src={question.author.picture}
               width={16}
@@ -29,8 +29,7 @@ const MainCard = ({ question }: IMainCard) => {
             />
           ) : (
             <div className="w-4 h-4 bg-yellow-bus rounded-full"></div>
-          )} */}
-          <div className="w-4 h-4 bg-yellow-bus rounded-full"></div>
+          )}
           <p>{question.author.username}</p>
           <p>
             <sup>.</sup>

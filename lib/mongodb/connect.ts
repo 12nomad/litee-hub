@@ -32,6 +32,7 @@ async function connectDB() {
 
   if (!cached.promise) {
     const opts: ConnectOptions = {
+      // FIXME: set bufferCommands: true on production
       bufferCommands: true,
       dbName: "litee-hub",
     };

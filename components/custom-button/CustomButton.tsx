@@ -1,5 +1,6 @@
 "use client";
 
+import { SVGProps } from "react";
 import { Button } from "flowbite-react";
 import { IconType } from "react-icons";
 
@@ -11,6 +12,7 @@ interface ICustomButton {
   size?: "xs" | "sm" | "md" | "lg" | "xl";
   type?: "reset" | "submit" | "button";
   icon?: IconType;
+  svg?: SVGProps<SVGSVGElement>;
 }
 
 const CustomButton = ({
@@ -21,6 +23,7 @@ const CustomButton = ({
   otherClass,
   textColor,
   size,
+  svg,
 }: ICustomButton) => {
   return (
     <Button
@@ -32,6 +35,7 @@ const CustomButton = ({
     >
       {title}
       {Icon && <Icon className="ml-2" />}
+      {svg && svg}
     </Button>
   );
 };

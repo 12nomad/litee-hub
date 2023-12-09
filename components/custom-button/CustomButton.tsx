@@ -1,6 +1,6 @@
 "use client";
 
-import { SVGProps } from "react";
+import { ReactNode, SVGProps } from "react";
 import { Button } from "flowbite-react";
 import { IconType } from "react-icons";
 
@@ -35,7 +35,7 @@ const CustomButton = ({
     >
       {title}
       {Icon && <Icon className="ml-2" />}
-      {svg && svg}
+      {svg && (svg as ReactNode)}
     </Button>
   );
 };
